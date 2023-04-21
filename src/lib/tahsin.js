@@ -26,6 +26,11 @@ export default function tahsin(inputText) {
             .replace(/{/g, '﴿')
             .replace(/}/g, '﴾')
 
+            // <li>حذف المسافة قبل علىمات الترقيم (، ؛ : .)</li>
+            .replace(/ ،/g, '،')
+            .replace(/ ؛/g, '؛')
+            .replace(/ :/g, ':')
+            .replace(/ . /g, '. ')
             
         // template: .replace(//g, '')
 
