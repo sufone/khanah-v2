@@ -22,6 +22,10 @@ export default function tahsin(inputText) {
             .replace(/َّ/g, 'َّ')
             .replace(/ِّ/g, 'ِّ')
 
+            // <li>تحويل القوس المعوج إلى قوس قرآني: ({'{'}{'}'}) إلى (﴿﴾)</li>
+            .replace(/{/g, '﴿')
+            .replace(/}/g, '﴾')
+
             
         // template: .replace(//g, '')
 
