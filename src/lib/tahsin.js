@@ -36,6 +36,9 @@ export default function tahsin(inputText) {
             .replace(/\( /g, '(')
             .replace(/ \)/g, ')')
 
+            // <li>تحويل الشرطة إلى الكشيدة: (باب - باب - باب) إلى (باب ـ باب ـ باب)</li>
+            .replace(/ - /g, ' ـ ')
+
 
 
         // template: .replace(//g, '')
