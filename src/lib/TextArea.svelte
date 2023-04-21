@@ -30,6 +30,7 @@
     min-height: 60vh;
     max-width: 80vw;
     overflow: auto;
+    font-size: larger;
   }
   textarea {
     word-break: break-word;
