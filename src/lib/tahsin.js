@@ -35,6 +35,8 @@ export default function tahsin(inputText) {
             // <li>حذف المسافة في أول وآخر القوس وتنصيص: (« باب ») إلى («باب»)</li>
             .replace(/\( /g, '(')
             .replace(/ \)/g, ')')
+            .replace(/« /g, '«')
+            .replace(/ »/g, '»')
 
             // <li>تحويل الشرطة إلى الكشيدة: (باب - باب - باب) إلى (باب ـ باب ـ باب)</li>
             .replace(/ - /g, ' ـ ')
