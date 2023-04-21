@@ -17,6 +17,12 @@ export default function tahsin(inputText) {
             // <li>حذف سكون الياء المدية: (قِيْل) إلى (قِيل)</li>
             .replace(/ِيْ/g, 'ِي')
 
+            // <li>نقل الشدة قبل الحركة على نفس الحرف</li>
+            .replace(/ُّ/g, 'ُّ')
+            .replace(/َّ/g, 'َّ')
+            .replace(/ِّ/g, 'ِّ')
+
+            
         // template: .replace(//g, '')
 
         return processedText
