@@ -3,7 +3,6 @@
   import viteLogo from "/vite.svg";
   import TextBox from "./lib/TextBox.svelte";
   import TextArea from "./lib/TextArea.svelte";
-    import TahsinExplanation from "./lib/TahsinExplanation.svelte";
 </script>
 
 <main>
@@ -15,6 +14,5 @@
   <!-- <TextBox />
   <hr class="my-0" /> -->
 
-  <TahsinExplanation />
 </main>
 

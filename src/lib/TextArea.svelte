@@ -1,4 +1,5 @@
 <script lang="ts">
+    import TahsinExplanation from "./TahsinExplanation.svelte";
   import tahsin from "./tahsin";
 
   let rawInputText
@@ -13,10 +14,12 @@
   <br />
   <br />
 
+
   <hr class="my-0" />
   <br />
 
-  <h2>نص محسَّن</h2>
+  <h2 class="text-2xl">نص محسَّن</h2>
+  <TahsinExplanation />
   <textarea bind:value={processedText} name="" />
 
 </div>
