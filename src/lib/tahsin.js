@@ -30,7 +30,7 @@ export default function tahsin(inputText) {
             .replace(/ ،/g, '،')
             .replace(/ ؛/g, '؛')
             .replace(/ :/g, ':')
-            .replace(/ . /g, '. ')
+            .replace(/ \. /g, '. ')
 
             // <li>حذف المسافة في أول وآخر القوس وتنصيص: (« باب ») إلى («باب»)</li>
             .replace(/\( /g, '(')
