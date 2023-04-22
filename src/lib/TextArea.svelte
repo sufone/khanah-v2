@@ -10,7 +10,7 @@
     </script>
 
 <div>
-  <textarea bind:value={rawInputText} name="" />
+  <textarea maxlength="5242880000000000" bind:value={rawInputText} name="" />
   <br />
   <br />
 
