@@ -1,27 +1,24 @@
 <script lang="ts">
-    import TahsinExplanation from "./TahsinExplanation.svelte";
+  import TahsinExplanation from "./TahsinExplanation.svelte";
   import tahsin from "./tahsin";
 
-  let rawInputText
+  let rawInputText;
 
-  let tahsinText
+  let tahsinText;
 
-  $: processedText = tahsin(rawInputText)
-    </script>
+  $: processedText = tahsin(rawInputText);
+</script>
 
 <div>
   <textarea maxlength="5242880000000000" bind:value={rawInputText} name="" />
-  <br />
-  <br />
 
 
   <hr class="my-0" />
   <br />
 
-  <h2 class="text-2xl">نص محسَّن</h2>
-  <TahsinExplanation />
-  <textarea bind:value={processedText} name="" />
-
+  <TahsinExplanation>
+    <textarea bind:value={processedText} name="" />
+  </TahsinExplanation>
 </div>
 
 <style>
