@@ -2,6 +2,8 @@ export default function tahsin(inputText) {
 
     if (inputText) {
         let processedText = inputText
+
+        // CLEANING SPACES AND TASHKIL
             // <li>حذف الفتحة قبل تاء مربوطة: (قطَة) إلى (قطة)</li>
             .replace(/اً/g, 'ًا')
 
@@ -40,6 +42,14 @@ export default function tahsin(inputText) {
 
             // <li>تحويل الشرطة إلى الكشيدة: (باب - باب - باب) إلى (باب ـ باب ـ باب)</li>
             .replace(/ - /g, ' ـ ')
+
+            // <li>تحويل التنصيص الإنجليزي إلى العربي: (باب "باب".) إلى (باب «باب».)</li>
+            .replace(/ "/g, ' «')
+            .replace(/" /g, '» ')
+            .replace(/"./g, '».')
+            .replace(/"،/g, '»،')
+            .replace(/"؛/g, '»؛')
+            .replace(/":/g, '»:')
 
 
 
