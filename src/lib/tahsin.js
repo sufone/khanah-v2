@@ -3,7 +3,7 @@ export default function tahsin(inputText) {
     if (inputText) {
         let processedText = inputText
 
-        // CLEANING SPACES AND TASHKIL
+            //// CLEANING SPACES AND TASHKIL
             // <li>حذف الفتحة قبل تاء مربوطة: (قطَة) إلى (قطة)</li>
             .replace(/اً/g, 'ًا')
 
@@ -24,21 +24,22 @@ export default function tahsin(inputText) {
             .replace(/َّ/g, 'َّ')
             .replace(/ِّ/g, 'ِّ')
 
-            // <li>تحويل القوس المعوج إلى قوس قرآني: ({'{'}{'}'}) إلى (﴿﴾)</li>
-            .replace(/{/g, '﴿')
-            .replace(/}/g, '﴾')
-
-            // <li>حذف المسافة قبل علىمات الترقيم (، ؛ : .)</li>
+            // <li>حذف المسافة الزائدة قبل علىمات الترقيم (، ؛ : .)</li>
             .replace(/ ،/g, '،')
             .replace(/ ؛/g, '؛')
             .replace(/ :/g, ':')
             .replace(/ \. /g, '. ')
 
-            // <li>حذف المسافة في أول وآخر القوس وتنصيص: (« باب ») إلى («باب»)</li>
+            // <li>حذف المسافة في أول وآخر القوس والتنصيص: (« باب ») إلى («باب»)</li>
             .replace(/\( /g, '(')
             .replace(/ \)/g, ')')
             .replace(/« /g, '«')
             .replace(/ »/g, '»')
+
+            //// CONVERTING SYMBOLS
+            // <li>تحويل القوس المعوج إلى قوس قرآني: ({'{'}{'}'}) إلى (﴿﴾)</li>
+            .replace(/{/g, '﴿')
+            .replace(/}/g, '﴾')
 
             // <li>تحويل الشرطة إلى الكشيدة: (باب - باب - باب) إلى (باب ـ باب ـ باب)</li>
             .replace(/ - /g, ' ـ ')
@@ -51,6 +52,9 @@ export default function tahsin(inputText) {
             .replace(/"؛/g, '»؛')
             .replace(/":/g, '»:')
 
+            // <li>تحويل القوس العادي إلى قوسين التنصيص: (باب (باب).) إلى (باب «باب».) </li>
+            .replace(/\)/g, '»')
+            .replace(/\(/g, '«')
 
 
         // template: .replace(//g, '')
