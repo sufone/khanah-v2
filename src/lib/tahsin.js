@@ -3,23 +3,14 @@ export default function tahsin(inputText) {
     if (inputText) {
         let processedText = inputText
 
+        
+            //// GENERAL INFO
+            // template: .replace(//g, '')
+            // ignoring tashkil with an optional group that matches any one or more of the tashkil: ([ًٌٍَُِّْ]+)?
+
             //// CLEANING SPACES AND TASHKIL
             // <li>حذف التشكيل الزائد ـ يعني ليس الإعراب ـ من اسم الجلالة (اَلْلَّه) إلى (الله) - لكي لا يؤثر في الخط</li>
-            .replace(/الله/g, 'الله')
-            .replace(/اَلله/g, 'الله')
-            .replace(/اَلْله/g, 'الله')
-            .replace(/اَلْلّه/g, 'الله')
-            .replace(/اَلْلَّه/g, 'الله')
-            .replace(/اَلْلَّه/g, 'الله')
-            .replace(/الْله/g, 'الله')
-            .replace(/الْلّه/g, 'الله')
-            .replace(/الْلَّه/g, 'الله')
-            .replace(/اللّه/g, 'الله')
-            .replace(/اَللّه/g, 'الله')
-            .replace(/اللَّه/g, 'الله')
-            .replace(/اَللَّه/g, 'الله')
-            .replace(/اللَه/g, 'الله')
-            .replace(/اَللَه/g, 'الله')
+            .replace(/ا([ًٌٍَُِّْ]+)?ل([ًٌٍَُِّْ]+)?ل([ًٌٍَُِّْ]+)?ه/g, 'الله')
 
             // <li>حذف الفتحة قبل تاء مربوطة: (قطَة) إلى (قطة)</li>
             .replace(/اً/g, 'ًا')
@@ -76,8 +67,6 @@ export default function tahsin(inputText) {
             //// DUA & HONORIFICS
             // <li>تحويل النص (صلى الله عليه وسلم) إلى رمزه ﷺ</li>
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
-            .replace(/صَلَّى الله عَلَيْهِ وَسَلَّمَ/g, 'ﷺ')
-            .replace(/صَلَّى الله عليه وسلم/g, 'ﷺ')
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
@@ -97,9 +86,7 @@ export default function tahsin(inputText) {
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
             .replace(/صلى الله عليه وسلم/g, 'ﷺ')
-
-
-        // template: .replace(//g, '')
+            .replace(/صلى الله عليه وسلم/g, 'ﷺ')
 
         return processedText
     }
