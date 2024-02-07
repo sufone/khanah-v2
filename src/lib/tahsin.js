@@ -61,7 +61,7 @@ export default function tahsin(inputText) {
             .replace(/":/g, '»:')
 
             // <li>تحويل القوس العادي إلى قوسين التنصيص: (باب ((باب)).) إلى (باب «باب».) </li>
-            .replace(/\))/g, '»')
+            .replace(/\)\)/g, '»')
             .replace(/\(\(/g, '«')
 
             //// DUA & HONORIFICS
