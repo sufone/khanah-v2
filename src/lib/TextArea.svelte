@@ -11,13 +11,14 @@
 
 <div>
   <textarea maxlength="5242880000000000" bind:value={rawInputText} name="" />
-
+  <!-- explicitly set maxlength; to override low browser default -->
 
   <hr class="my-0" />
   <br />
 
   <TahsinExplanation>
     <textarea bind:value={processedText} name="" />
+    <!-- kept the textarea and passed it into a slot; to apply styles to both textareas -->
   </TahsinExplanation>
 </div>
 
