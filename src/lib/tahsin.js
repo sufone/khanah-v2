@@ -3,10 +3,10 @@ export default function tahsin(inputText) {
     if (inputText) {
         let processedText = inputText
 
-        
             //// GENERAL INFO
             // template: .replace(//g, '')
             // ignoring tashkil with an optional group that matches any one or more of the tashkil: ([ًٌٍَُِّْ]+)?
+            // each replacement is explained using <li> tags to make it easy to update the explanation html at the same time
 
             //// CLEANING SPACES AND TASHKIL
             // <li>حذف التشكيل الزائد ـ يعني ليس الإعراب ـ من اسم الجلالة (اَلْلَّه) إلى (الله) - لكي لا يؤثر في الخط</li>
@@ -43,6 +43,9 @@ export default function tahsin(inputText) {
             .replace(/ \)/g, ')')
             .replace(/« /g, '«')
             .replace(/ »/g, '»')
+
+            // <li>حذف الكشيدة أي التطويل في أثناء الكلمات: (مـن) إلى (من)</li>
+            .replace(/(?<! )ـ/g, '')
 
             //// CONVERTING SYMBOLS
             // <li>تحويل القوس المعوج إلى قوس قرآني: ({'{'}{'}'}) إلى (﴿﴾)</li>
