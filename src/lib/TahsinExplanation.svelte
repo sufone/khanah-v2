@@ -1,7 +1,7 @@
-<details class="bg-slate-300 rounded">
+<details class="rounded-xl border border-sky-600">
     <slot />
 
-    <summary>نص محسَّن</summary>
+    <summary class="font-bold text-sky-600">النص المحسَّن</summary>
 
     <br />
 

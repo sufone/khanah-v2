@@ -6,13 +6,8 @@
 </script>
 
 <main>
-  <h1 class="text-4xl m-0">خانة النصوص</h1>
+  <h1 class="text-4xl m-0 font-bold text-sky-800">خانة النصوص</h1>
   <TextArea />
   <br />
-
-  <hr class="my-0" />
-  <!-- <TextBox />
-  <hr class="my-0" /> -->
-
 </main>
 
