@@ -56,12 +56,7 @@ export default function tahsin(inputText) {
             .replace(/ - /g, ' ـ ')
 
             // <li>تحويل التنصيص الإنجليزي إلى العربي: (باب "باب".) إلى (باب «باب».)</li>
-            .replace(/ "/g, ' «')
-            .replace(/" /g, '» ')
-            .replace(/"\./g, '».')
-            .replace(/"،/g, '»،')
-            .replace(/"؛/g, '»؛')
-            .replace(/":/g, '»:')
+            .replace(/"([^"]*)"/g, '«$1»')
 
             // <li>تحويل القوس العادي إلى قوس التنصيص: (باب ((باب)).) إلى (باب «باب».) </li>
             .replace(/\)\)/g, '»')
