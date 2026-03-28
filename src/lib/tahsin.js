@@ -9,11 +9,26 @@ export default function tahsin(inputText) {
             // each replacement is explained using <li> tags to make it easy to update the explanation html at the same time
 
             //// CLEANING SPACES AND TASHKIL
-            // <li>حذف التشكيل الزائد ـ يعني ليس الإعراب ـ من اسم الجلالة (اَلْلَّه) إلى (الله) - لكي لا يؤثر في الخط</li>
-            .replace(/ا([ًٌٍَُِّْ]+)?ل([ًٌٍَُِّْ]+)?ل([ًٌٍَُِّْ]+)?ه/g, 'الله')
-
             // <li>حذف الفواصل غير المرئية (ZWNJ) لمنع تقطع الحروف والضمائر المتصلة: (أفعال‌ه) إلى (أفعاله)</li>
             .replace(/\u200C/g, '')
+
+            // <li>حذف التشكيل الزائد والشدة نهائياً من (الله) مع الإبقاء على حركة الإعراب فقط على الهاء</li>
+            .replace(/ا[ًٌٍَُِّْٰ]*ل[ًٌٍَُِّْٰ]*ل[ًٌٍَُِّْٰ]*ه([ًٌٍَُِّْٰ]*)/g, (match, haaTashkil) => {
+                let finalVowel = '';
+                if (haaTashkil.includes('َ')) finalVowel = 'َ';
+                else if (haaTashkil.includes('ُ')) finalVowel = 'ُ';
+                else if (haaTashkil.includes('ِ')) finalVowel = 'ِ';
+                return 'الله' + finalVowel;
+            })
+
+            // <li>حذف التشكيل الزائد والشدة من (لله) مع الإبقاء على حركة الإعراب وتجنب الكلمات المشابهة (مثل: يحلله)</li>
+            .replace(/(^|[^أ-ي])([وف][ًٌٍَُِّْٰ]*)?ل[ًٌٍَُِّْٰ]*ل[ًٌٍَُِّْٰ]*ه([ًٌٍَُِّْٰ]*)/g, (match, boundary, prefix, haaTashkil) => {
+                let finalVowel = '';
+                if (haaTashkil.includes('َ')) finalVowel = 'َ';
+                else if (haaTashkil.includes('ُ')) finalVowel = 'ُ';
+                else if (haaTashkil.includes('ِ')) finalVowel = 'ِ';
+                return boundary + (prefix || '') + 'لله' + finalVowel;
+            })
 
             // <li>حذف الفتحة قبل تاء مربوطة: (قطَة) إلى (قطة)</li>
             .replace(/اً/g, 'ًا')
