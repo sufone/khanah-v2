@@ -19,7 +19,7 @@
         <br />
 
         <p>حاليا، فيه التعديلات الآتية:</p>
-                    <ol class="text-right p-lg list-decimal list-inside">
+            <ol class="text-right p-lg list-decimal list-inside">
 
             <p>تصحيح التشكيل والترقيم:</p>
             <li>نقل تنوين فتحة من الألف إلى قبلها: (باباً) إلى (بابًا)</li>
@@ -49,6 +49,7 @@
                 باب)
             </li>
             <li>حذف الكشيدة أي التطويل في أثناء الكلمات: (مـن) إلى (من)</li>
+            <li>حذف الفواصل غير المرئية (ZWNJ) لمنع تقطع الحروف والضمائر المتصلة: (أفعال‌ه) إلى (أفعاله)</li>
         </ol>
             <br />
             <ol class="text-right p-lg list-decimal list-inside">
